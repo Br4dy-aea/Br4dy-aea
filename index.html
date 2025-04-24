@@ -14,7 +14,7 @@
     }
     header {
       background: #003366;
-      color: #000000;
+      color: #ffffff;
       padding: 2.5rem 1rem;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -46,6 +46,7 @@
       border-radius: 6px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .screenshot img:hover, .screenshot video:hover {
       transform: scale(1.02);
@@ -67,28 +68,27 @@
       font-weight: bold;
       color: #00ffcc;
     }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Lightbox popup */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
     }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid white;
+      border-radius: 8px;
+    }
+    #lightbox:target {
+      display: flex;
     }
   </style>
 </head>
@@ -97,6 +97,10 @@
     <h1>Braeden Bateman</h1>
     <p>Reverse Engineer • Technician • iOS Developer • Tech Freedom Enthusiast</p>
   </header>
+
+  <div id="lightbox">
+    <img id="lightbox-img" src="" alt="Expanded view">
+  </div>
 
   <section>
     <h2>iOS Tweak Development</h2>
@@ -118,8 +122,8 @@
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
       <p>Soldered Modbo 5.0 to PlayStation 2. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
       <div class="screenshot">
-        <img src="images/modbo1.jpg" alt="Modbo wiring closeup">
-        <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering">
+        <img src="images/modbo1.jpg" alt="Modbo wiring closeup" onclick="openLightbox(this.src)">
+        <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering" onclick="openLightbox(this.src)">
       </div>
     </div>
   </section>
@@ -130,14 +134,14 @@
       <h3>Ryzen Hackintosh (OpenCore)</h3>
       <p>Set up macOS Sonoma and later Sequoia on a <span class="highlight">Ryzen 5700G / RX 5600 XT</span> system. Configured OpenCore bootloader, USB mapping, and ACPI patches.</p>
       <div class="screenshot">
-        <img src="images/PC1.jpg" alt="White Hackintosh build with RGB cooling">
+        <img src="images/PC1.jpg" alt="White Hackintosh build with RGB cooling" onclick="openLightbox(this.src)">
       </div>
     </div>
     <div class="project">
       <h3>Asus VivoBook X512DA Laptop Hackintosh</h3>
       <p>Successfully configured macOS Big Sur on an AMD-based Asus VivoBook X512DA. Managed <span class="highlight">kexts</span>, patched USB maps, and implemented Wi-Fi/trackpad compatibility fixes.</p>
       <div class="screenshot">
-        <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh running macOS">
+        <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh running macOS" onclick="openLightbox(this.src)">
         <div class="caption">Asus X512DA Laptop Hackintosh running Big Sur</div>
       </div>
     </div>
@@ -145,7 +149,7 @@
       <h3>Custom PC – Red Theme Build</h3>
       <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span></p>
       <div class="screenshot">
-        <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler">
+        <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler" onclick="openLightbox(this.src)">
         <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
       </div>
     </div>
@@ -157,7 +161,7 @@
       <h3>Hyperflash Fix with Resistors</h3>
       <p>Installed <span class="highlight">load resistors</span> behind signal bulbs, diagnosed bundled headlight harness wiring using multimeter.</p>
       <div class="screenshot">
-        <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly">
+        <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly" onclick="openLightbox(this.src)">
       </div>
     </div>
   </section>
@@ -165,5 +169,17 @@
   <footer>
     <p>Website built and maintained by Braeden Bateman • Powered by GitHub Pages</p>
   </footer>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+    document.getElementById('lightbox').addEventListener('click', function() {
+      this.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
