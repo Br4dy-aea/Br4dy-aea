@@ -11,10 +11,11 @@
       padding: 0;
       background: #1e1e2f;
       color: #e0e0e0;
+      transition: background 0.3s ease;
     }
     header {
-      background: #121212;
-      color: #00ffcc;
+      background: linear-gradient(145deg, #00c9a7, #005f73);
+      color: #ffffff;
       padding: 2rem;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -32,6 +33,7 @@
       color: #00ffcc;
       border-bottom: 1px solid #00ffcc;
       padding-bottom: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
     .project {
       margin-bottom: 2rem;
@@ -43,12 +45,26 @@
       margin: 1rem auto;
       border: 1px solid #444;
       border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     }
     .caption {
       text-align: center;
       font-style: italic;
       margin-top: -0.5rem;
       color: #ccc;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+    .highlight {
+      background: #00ffcc33;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #00ffcc;
     }
   </style>
 </head>
@@ -62,7 +78,7 @@
     <h2>iOS Tweak Development</h2>
     <div class="project">
       <h3>CalcConv – iOS Calculator Conversion Tweak</h3>
-      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS, Currently only supports iPhone 12 or similar size devices. Features custom UI, category search, and runtime hooking via Theos and Objective-C.</p>
+      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS, Currently only supports iPhone 12 or similar size devices. Features <span class="highlight">custom UI</span>, <span class="highlight">category search</span>, and <span class="highlight">runtime hooking</span> via Theos and Objective-C.</p>
       <div class="screenshot">
         <video controls>
           <source src="videos/CalcConvUI.mov" type="video/quicktime">
@@ -76,7 +92,7 @@
     <h2>Reverse Engineering & Firmware Projects</h2>
     <div class="project">
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
-      <p>Manually soldered Modbo 5.0 to a 2006 PlayStation 2 board. Identified safe alternative 3.3V pads and resolved Y-break wire routing issue.</p>
+      <p>Manually soldered Modbo 5.0 to a 2006 PlayStation 2 board. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
       <div class="screenshot">
         <img src="images/modbo1.jpg" alt="Modbo wiring closeup">
         <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering">
@@ -88,14 +104,14 @@
     <h2>PC & Hackintosh Builds</h2>
     <div class="project">
       <h3>Ryzen Hackintosh (OpenCore)</h3>
-      <p>Set up macOS Sonoma and later Sequoia on a Ryzen 5700G / RX 5600 XT system. Configured OpenCore bootloader, USB mapping, and ACPI patches.</p>
+      <p>Set up macOS Sonoma and later Sequoia on a <span class="highlight">Ryzen 5700G / RX 5600 XT</span> system. Configured OpenCore bootloader, USB mapping, and ACPI patches.</p>
       <div class="screenshot">
         <img src="images/PC1.jpg" alt="White Hackintosh build with RGB cooling">
       </div>
     </div>
     <div class="project">
       <h3>Asus VivoBook X512DA Laptop Hackintosh</h3>
-      <p>Successfully configured macOS Big Sur on an AMD-based Asus VivoBook X512DA. Managed kexts, patched USB maps, and implemented Wi-Fi/trackpad compatibility fixes.</p>
+      <p>Successfully configured macOS Big Sur on an AMD-based Asus VivoBook X512DA. Managed <span class="highlight">kexts</span>, patched USB maps, and implemented Wi-Fi/trackpad compatibility fixes.</p>
       <div class="screenshot">
         <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh running macOS">
         <div class="caption">Asus X512DA Laptop Hackintosh running Big Sur</div>
@@ -103,7 +119,7 @@
     </div>
     <div class="project">
       <h3>Custom PC – Red Theme Build</h3>
-      <p>This configuration features a Ryzen 7 1700 and Radeon RX 5600 XT, optimized for thermals and a consistent red LED aesthetic.</p>
+      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span>, optimized for thermals and a consistent red LED aesthetic.</p>
       <div class="screenshot">
         <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler">
         <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
@@ -115,12 +131,15 @@
     <h2>Hardware Mods & Diagnostics</h2>
     <div class="project">
       <h3>Hyperflash Fix with Resistors</h3>
-      <p>Installed load resistors behind signal bulbs, diagnosed bundled headlight harness wiring using multimeter and voltage drop checks.</p>
+      <p>Installed <span class="highlight">load resistors</span> behind signal bulbs, diagnosed bundled headlight harness wiring using <span class="highlight">multimeter</span> and voltage drop checks.</p>
       <div class="screenshot">
         <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly">
       </div>
     </div>
   </section>
 
+  <footer>
+    <p>Website built and maintained by Braeden Bateman • Powered by GitHub Pages</p>
+  </footer>
 </body>
 </html>
