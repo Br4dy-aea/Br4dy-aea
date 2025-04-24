@@ -11,32 +11,31 @@
       padding: 0;
       background: #1e1e2f;
       color: #e0e0e0;
-      transition: background 0.3s ease;
     }
     header {
-      background: #003366; /* Marine blue */
-      color: #ffffff;
-      padding: 2rem;
+      background: #003366;
+      color: #00ffcc;
+      padding: 2.5rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      animation: fadeInDown 1s ease-out;
     }
     section {
       padding: 2rem;
       max-width: 900px;
-      margin: auto;
+      margin: 2rem auto;
       background: #29293d;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: 2rem;
       border-radius: 10px;
+      animation: fadeInUp 0.8s ease-in-out;
     }
     h2 {
       color: #00ffcc;
       border-bottom: 1px solid #00ffcc;
       padding-bottom: 0.5rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
     .project {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .screenshot img, .screenshot video {
       width: 100%;
@@ -44,24 +43,52 @@
       display: block;
       margin: 1rem auto;
       border: 1px solid #444;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+    .screenshot img:hover, .screenshot video:hover {
+      transform: scale(1.02);
     }
     .caption {
       text-align: center;
       font-style: italic;
       margin-top: -0.5rem;
-      color: #ccc;
+      color: #bbb;
     }
     footer {
       text-align: center;
-      color: #aaa;
+      color: #888;
       font-size: 0.9rem;
       padding: 2rem 1rem;
+      border-top: 1px solid #333;
     }
     .highlight {
       font-weight: bold;
       color: #00ffcc;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -75,7 +102,7 @@
     <h2>iOS Tweak Development</h2>
     <div class="project">
       <h3>CalcConv – iOS Calculator Conversion Tweak</h3>
-      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS, Currently only supports iPhone 12 or similar size devices. Features <span class="highlight">custom UI</span>, category search, and runtime hooking via Theos and Objective-C.</p>
+      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS, currently supporting iPhone 12 or similar sizes. Features <span class="highlight">custom UI</span>, category search, and runtime hooking via Theos and Objective-C.</p>
       <div class="screenshot">
         <video controls>
           <source src="videos/CalcConvUI.mov" type="video/quicktime">
@@ -89,7 +116,7 @@
     <h2>Reverse Engineering & Firmware Projects</h2>
     <div class="project">
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
-      <p>Manually soldered Modbo 5.0 to a 2006 PlayStation 2 board. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
+      <p>Soldered Modbo 5.0 to PlayStation 2. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
       <div class="screenshot">
         <img src="images/modbo1.jpg" alt="Modbo wiring closeup">
         <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering">
@@ -116,7 +143,7 @@
     </div>
     <div class="project">
       <h3>Custom PC – Red Theme Build</h3>
-      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span>, optimized for thermals and a consistent red LED aesthetic.</p>
+      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span></p>
       <div class="screenshot">
         <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler">
         <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
@@ -128,7 +155,7 @@
     <h2>Hardware Mods & Diagnostics</h2>
     <div class="project">
       <h3>Hyperflash Fix with Resistors</h3>
-      <p>Installed <span class="highlight">load resistors</span> behind signal bulbs, diagnosed bundled headlight harness wiring using multimeter and voltage drop checks.</p>
+      <p>Installed <span class="highlight">load resistors</span> behind signal bulbs, diagnosed bundled headlight harness wiring using multimeter.</p>
       <div class="screenshot">
         <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly">
       </div>
