@@ -31,19 +31,19 @@
     .project {
       margin-bottom: 2rem;
     }
-    .screenshot {
-      background: #eee;
-      padding: 1rem;
-      text-align: center;
-      border: 1px dashed #ccc;
-      color: #666;
+    .screenshot img {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 1rem auto;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Bradeden Bateman</h1>
-    <p>Reverse Engineer • Technician • iOS Developer • Freedom</p>
+    <h1>Braeden Bateman</h1>
+    <p>Reverse Engineer • Technician • iOS Developer • Tech Freedom Enthusiast</p>
   </header>
 
   <section>
@@ -51,26 +51,24 @@
     <div class="project">
       <h3>CalcConv – iOS Calculator Conversion Tweak</h3>
       <p>A jailbreak tweak that brings iOS 18-style unit conversions to older versions like iOS 14. Features custom UI, category search, and runtime hooking via Theos and Objective-C.</p>
-      <div class="screenshot">[Screenshot Placeholder – Conversion UI]</div>
-    </div>
-    <div class="project">
-      <h3>Live Currency Extension</h3>
-      <p>Integrates live exchange rate lookups into CalcConv. Uses custom Swift/ObjC bridges to access currency APIs and perform conversion formatting.</p>
-      <div class="screenshot">[Screenshot Placeholder – Currency JSON Debug Log]</div>
+      <div class="screenshot">
+        <video controls width="100%" style="max-width:700px; display:block; margin:auto;">
+          <source src="videos/CalcConvUI.mov" type="video/quicktime">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Reverse Engineering & Firmware Projects</h2>
     <div class="project">
-      <h3>USB Flash Drive Disassembly & Board Mapping</h3>
-      <p>Deconstructed Verbatim 32GB USB drive, traced NAND and controller models, created schematic diagram and BOM from physical analysis.</p>
-      <div class="screenshot">[Photo Placeholder – Annotated PCB]</div>
-    </div>
-    <div class="project">
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
       <p>Manually soldered Modbo 5.0 to a 2006 PlayStation 2 board. Identified safe alternative 3.3V pads and resolved Y-break wire routing issue.</p>
-      <div class="screenshot">[Photo Placeholder – Modbo Installed]</div>
+      <div class="screenshot">
+        <img src="images/modbo1.jpg" alt="Modbo wiring closeup">
+        <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering">
+      </div>
     </div>
   </section>
 
@@ -79,12 +77,10 @@
     <div class="project">
       <h3>Ryzen Hackintosh (OpenCore)</h3>
       <p>Set up macOS Sonoma and later Sequoia on a Ryzen 5700G / RX 5600 XT system. Configured OpenCore bootloader, USB mapping, and ACPI patches.</p>
-      <div class="screenshot">[Screenshot Placeholder – OpenCore Config]</div>
-    </div>
-    <div class="project">
-      <h3>Custom Retro Game Box</h3>
-      <p>Converted T95Z Plus Android box into an emulation/media center using EmuELEC. Optimized boot performance and power cycling from remote.</p>
-      <div class="screenshot">[Photo Placeholder – Emulator UI]</div>
+      <div class="screenshot">
+        <img src="images/PC1.jpg" alt="White Hackintosh build with RGB cooling">
+        <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler">
+      </div>
     </div>
   </section>
 
@@ -93,9 +89,12 @@
     <div class="project">
       <h3>Hyperflash Fix with Resistors</h3>
       <p>Installed load resistors behind signal bulbs, diagnosed bundled headlight harness wiring using multimeter and voltage drop checks.</p>
-      <div class="screenshot">[Photo Placeholder – Resistor Mounting]</div>
+      <div class="screenshot">
+        <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly">
+      </div>
     </div>
   </section>
 
 </body>
 </html>
+
