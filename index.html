@@ -13,25 +13,24 @@
       color: #e0e0e0;
       line-height: 1.6;
     }
-    header {
-      background: rgba(0, 51, 102, 0.85);
+    .hero {
+      background: linear-gradient(to right, #003366, #001f33);
       color: #ffffff;
-      padding: 2rem 1rem;
       text-align: center;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 6rem 2rem 4rem 2rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      position: relative;
     }
-    header h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.5rem;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-out;
     }
-    header p {
-      margin: 0;
+    .hero p {
+      font-size: 1.2rem;
       font-weight: 300;
-      font-size: 1rem;
+      animation: fadeInUp 1.2s ease-out;
     }
     section {
       padding: 2rem;
@@ -40,7 +39,7 @@
       background: #29293d;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
       border-radius: 12px;
-      animation: fadeInUp 1s ease;
+      animation: fadeInUp 1.2s ease;
     }
     h2 {
       color: #00ffcc;
@@ -110,34 +109,25 @@
       border-radius: 10px;
       animation: zoomIn 0.5s ease;
     }
-
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @keyframes zoomIn {
-      from {
-        transform: scale(0.7);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="hero">
     <h1>Braeden Bateman</h1>
     <p>Reverse Engineer • Technician • iOS Developer • Tech Freedom Enthusiast</p>
-  </header>
+  </div>
 
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Expanded view">
@@ -188,7 +178,7 @@
     </div>
     <div class="project">
       <h3>Custom PC – Red Theme Build</h3>
-      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span></p>
+      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span>.</p>
       <div class="screenshot">
         <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler" onclick="openLightbox(this.src)">
         <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
