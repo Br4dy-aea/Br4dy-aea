@@ -6,12 +6,12 @@
   <title>Brady Bateman Portfolio</title>
   <style>
     body {
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background: #1e1e2f;
       color: #e0e0e0;
-      line-height: 1.6;
+      overflow-x: hidden;
     }
     .contact-menu {
       position: fixed;
@@ -19,7 +19,7 @@
       right: 0;
       transform: translateY(-50%);
       background: #003366;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 8px 0 0 8px;
       box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
@@ -29,30 +29,29 @@
       margin: 1rem 0;
       color: #00ffcc;
       text-decoration: none;
-      font-weight: bold;
-      text-align: center;
+      font-size: 1.2rem;
       transition: all 0.3s ease;
     }
     .contact-menu a:hover {
       color: #ffffff;
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
     .hero {
       background: linear-gradient(to right, #003366, #001f33);
       color: #ffffff;
       text-align: center;
-      padding: 6rem 2rem 4rem 2rem;
+      padding: 7rem 2rem 5rem 2rem;
       backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
       position: relative;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
       animation: fadeInDown 1s ease-out;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 300;
       animation: fadeInUp 1.2s ease-out;
     }
@@ -61,26 +60,28 @@
       max-width: 960px;
       margin: 3rem auto;
       background: #29293d;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       animation: fadeInUp 1.2s ease;
     }
     h2 {
       color: #00ffcc;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid #00ffcc;
       padding-bottom: 0.5rem;
+      text-align: center;
     }
     .project {
-      margin-bottom: 3rem;
-      transition: box-shadow 0.3s ease;
-      padding: 1rem;
+      background: #33334d;
+      padding: 1.5rem;
       border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .project:hover {
-      box-shadow: 0 0 15px #00ffcc44;
-      background: #2f2f44;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 255, 204, 0.4);
     }
     .screenshot img, .screenshot video {
       width: 100%;
@@ -90,23 +91,29 @@
       border: 1px solid #555;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease;
       cursor: pointer;
-    }
-    .screenshot img:hover, .screenshot video:hover {
-      transform: scale(1.02);
     }
     .caption {
       text-align: center;
       font-style: italic;
       margin-top: -0.5rem;
-      color: #aaa;
+      color: #bbb;
+    }
+    .badge {
+      display: inline-block;
+      background: #00ffcc;
+      color: #1e1e2f;
+      padding: 0.2rem 0.6rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
     }
     footer {
       text-align: center;
       color: #777;
-      font-size: 0.85rem;
-      padding: 1.5rem;
+      font-size: 0.8rem;
+      padding: 2rem 1rem;
       border-top: 1px solid #333;
       margin-top: 3rem;
     }
@@ -133,18 +140,9 @@
       border-radius: 10px;
       animation: zoomIn 0.5s ease;
     }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes zoomIn {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+    @keyframes fadeInDown { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes zoomIn { from {transform: scale(0.7); opacity: 0;} to {transform: scale(1); opacity: 1;} }
   </style>
 </head>
 <body>
@@ -162,12 +160,13 @@
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Expanded view">
   </div>
-  
+
   <section>
     <h2>iOS Tweak Development</h2>
     <div class="project">
+      <div class="badge">Jailbreak Development</div>
       <h3>CalcConv – iOS Calculator Conversion Tweak</h3>
-      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS, currently supporting iPhone 12 or similar sizes. Features <span class="highlight">custom UI</span>, category search, and runtime hooking via Theos and Objective-C.</p>
+      <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS versions. Features <span class="highlight">custom UI</span>, category search, and runtime hooking via Theos and Objective-C.</p>
       <div class="screenshot">
         <video controls>
           <source src="videos/CalcConvUI.mov" type="video/quicktime">
@@ -179,8 +178,8 @@
 
   <section>
     <h2>Reverse Engineering & Firmware Projects</h2>
-
     <div class="project">
+      <div class="badge">PS2 Modding</div>
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
       <p>Soldered Modbo 5.0 to PlayStation 2. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
       <div class="screenshot">
@@ -190,8 +189,9 @@
     </div>
 
     <div class="project">
+      <div class="badge">PS1 Modding</div>
       <h3>PS1 Modchip Recovery</h3>
-      <p>Discovered a PlayStation 1 at a flea market with a half-installed modchip. Using William Quade’s documentation, I trialed multiple modchip diagrams to identify the exact chip. Successfully completed the wiring and restored full modchip functionality.</p>
+      <p>Discovered a PlayStation 1 at a flea market with a half-installed modchip. Completed the wiring and restored full multi-region functionality using William Quade's guides.</p>
       <div class="screenshot">
         <img src="images/ps1.jpg" alt="PS1 Modchip Install" onclick="openLightbox(this.src)">
         <div class="caption">Recovered and completed PS1 modchip installation.</div>
@@ -199,34 +199,39 @@
     </div>
 
     <div class="project">
-      <h3>Verbatim 32GB USB Reverse Engineering</h3>
-      <p>Reverse engineered a Verbatim 32GB flash drive featuring an Alcor AU6989 memory controller and Micron NAND chip. Extracted PCB layouts, identified pinouts, desoldered components for measruement and created a schematic diagram. The analysis included chip labeling identification, continuity testing, bill of materials creation, and component functionality mapping for educational purposes.</p>
+      <div class="badge">USB Reverse Engineering</div>
+      <h3>Verbatim 32GB USB Flash Drive Reverse Engineering</h3>
+      <p>Reverse engineered a Verbatim USB featuring Alcor AU6989 controller and Micron NAND. Created schematics, performed chip labeling identification, continuity testing, and BOM generation.</p>
     </div>
-
   </section>
 
   <section>
     <h2>PC & Hackintosh Builds</h2>
     <div class="project">
+      <div class="badge">Hackintosh</div>
       <h3>Ryzen Hackintosh (OpenCore)</h3>
-      <p>Set up macOS Sonoma and later Sequoia on a <span class="highlight">Ryzen 5700G / RX 5600 XT</span> system. Configured OpenCore bootloader, USB mapping, and ACPI patches.</p>
+      <p>Built a macOS Sonoma/Sequoia Hackintosh on Ryzen 5700G with an RX 5600 XT. Configured OpenCore bootloader, mapped USB ports, and applied ACPI patches.</p>
       <div class="screenshot">
-        <img src="images/PC1.jpg" alt="White Hackintosh build with RGB cooling" onclick="openLightbox(this.src)">
+        <img src="images/PC1.jpg" alt="White Hackintosh Build" onclick="openLightbox(this.src)">
       </div>
     </div>
+
     <div class="project">
-      <h3>Asus VivoBook X512DA Laptop Hackintosh</h3>
-      <p>Successfully configured macOS Big Sur on an AMD-based Asus VivoBook X512DA. Managed <span class="highlight">kexts</span>, patched USB maps, and implemented Wi-Fi/trackpad compatibility fixes.</p>
+      <div class="badge">Hackintosh</div>
+      <h3>Asus VivoBook X512DA Hackintosh</h3>
+      <p>Installed macOS Big Sur on an AMD-based VivoBook X512DA. Managed <span class="highlight">kexts</span>, Wi-Fi, trackpad compatibility, and USB mapping.</p>
       <div class="screenshot">
-        <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh running macOS" onclick="openLightbox(this.src)">
-        <div class="caption">Asus X512DA Laptop Hackintosh running Big Sur</div>
+        <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh" onclick="openLightbox(this.src)">
+        <div class="caption">Big Sur on Asus VivoBook</div>
       </div>
     </div>
+
     <div class="project">
+      <div class="badge">PC Build</div>
       <h3>Custom PC – Red Theme Build</h3>
-      <p>This configuration features a <span class="highlight">Ryzen 7 1700 and Radeon RX 5600 XT</span>.</p>
+      <p>Ryzen 7 1700 and Radeon RX 5600 XT configuration, focusing on clean airflow, red-themed RGB, and budget optimization for gaming and development.</p>
       <div class="screenshot">
-        <img src="images/PC2.jpg" alt="Red RGB PC build with air cooler" onclick="openLightbox(this.src)">
+        <img src="images/PC2.jpg" alt="Custom PC Red Build" onclick="openLightbox(this.src)">
         <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
       </div>
     </div>
@@ -235,10 +240,11 @@
   <section>
     <h2>Hardware Mods & Diagnostics</h2>
     <div class="project">
-      <h3>Hyperflash Fix with Resistors</h3>
-      <p>Installed <span class="highlight">load resistors</span> behind signal bulbs, and diagnosed bundled headlight harness wiring using multimeter.</p>
+      <div class="badge">Automotive Electronics</div>
+      <h3>Hyperflash Fix – Load Resistor Install</h3>
+      <p>Installed load resistors to prevent hyperflashing after LED signal upgrades. Diagnosed bundled headlight harness wiring using multimeter tracing and safe resistor mounting practices.</p>
       <div class="screenshot">
-        <img src="images/resistors.jpg" alt="Installed resistor in Hyundai Tucson headlight assembly" onclick="openLightbox(this.src)">
+        <img src="images/resistors.jpg" alt="Load Resistor Install" onclick="openLightbox(this.src)">
       </div>
     </div>
   </section>
