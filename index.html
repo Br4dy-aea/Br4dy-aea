@@ -4,146 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brady Bateman Portfolio</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #1e1e2f;
-      color: #e0e0e0;
-      overflow-x: hidden;
-    }
-    .contact-menu {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background: #003366;
-      padding: 0.5rem;
-      border-radius: 8px 0 0 8px;
-      box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-    }
-    .contact-menu a {
-      display: block;
-      margin: 1rem 0;
-      color: #00ffcc;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-    .contact-menu a:hover {
-      color: #ffffff;
-      transform: scale(1.2);
-    }
-    .hero {
-      background: linear-gradient(to right, #003366, #001f33);
-      color: #ffffff;
-      text-align: center;
-      padding: 7rem 2rem 5rem 2rem;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      animation: fadeInDown 1s ease-out;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      font-weight: 300;
-      animation: fadeInUp 1.2s ease-out;
-    }
-    section {
-      padding: 2rem;
-      max-width: 960px;
-      margin: 3rem auto;
-      background: #29293d;
-      border-radius: 12px;
-      animation: fadeInUp 1.2s ease;
-    }
-    h2 {
-      color: #00ffcc;
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #00ffcc;
-      padding-bottom: 0.5rem;
-      text-align: center;
-    }
-    .project {
-      background: #33334d;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0, 255, 204, 0.4);
-    }
-    .screenshot img, .screenshot video {
-      width: 100%;
-      max-width: 720px;
-      display: block;
-      margin: 1rem auto;
-      border: 1px solid #555;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-      cursor: pointer;
-    }
-    .caption {
-      text-align: center;
-      font-style: italic;
-      margin-top: -0.5rem;
-      color: #bbb;
-    }
-    .badge {
-      display: inline-block;
-      background: #00ffcc;
-      color: #1e1e2f;
-      padding: 0.2rem 0.6rem;
-      margin: 0.5rem 0;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 0.8rem;
-      padding: 2rem 1rem;
-      border-top: 1px solid #333;
-      margin-top: 3rem;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #00ffcc;
-    }
-    #lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border: 4px solid white;
-      border-radius: 10px;
-      animation: zoomIn 0.5s ease;
-    }
-    @keyframes fadeInDown { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
-    @keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
-    @keyframes zoomIn { from {transform: scale(0.7); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-  </style>
+ <style>
+  body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #1e1e2f; color: #e0e0e0; overflow-x: hidden; }
+  .contact-menu { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: #003366; padding: 0.5rem; border-radius: 8px 0 0 8px; box-shadow: -2px 2px 10px rgba(0,0,0,0.5); z-index: 1000; }
+  .contact-menu a { display: block; margin: 1rem 0; color: #00ffcc; text-decoration: none; font-size: 1.2rem; transition: all 0.3s ease; }
+  .contact-menu a:hover { color: #ffffff; transform: scale(1.2); }
+  .hero { background: linear-gradient(to right, #003366, #001f33); color: #ffffff; text-align: center; padding: 7rem 2rem 5rem 2rem; backdrop-filter: blur(6px); box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
+  .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; animation: fadeInDown 1s ease-out; }
+  .hero p { font-size: 1.3rem; font-weight: 300; animation: fadeInUp 1.2s ease-out; }
+  section { padding: 2rem; max-width: 960px; margin: 3rem auto; background: #29293d; border-radius: 12px; animation: fadeInUp 1.2s ease; }
+  h2 { color: #00ffcc; font-size: 2.2rem; margin-bottom: 1.5rem; border-bottom: 1px solid #00ffcc; padding-bottom: 0.5rem; text-align: center; }
+  .project { background: #33334d; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .project:hover { transform: translateY(-5px); box-shadow: 0 4px 20px rgba(0,255,204,0.4); }
+  .screenshot img, .screenshot video { width: 100%; max-width: 720px; display: block; margin: 1rem auto; border: 1px solid #555; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); cursor: pointer; }
+  .caption { text-align: center; font-style: italic; margin-top: -0.5rem; color: #bbb; }
+  .badge { display: inline-block; background: #00ffcc; color: #1e1e2f; padding: 0.2rem 0.6rem; margin: 0.5rem 0; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+  details { background: #2c2c3c; border-radius: 8px; padding: 1rem; margin-top: 1rem; cursor: pointer; }
+  details summary { font-weight: bold; font-size: 1rem; color: #00ffcc; }
+  footer { text-align: center; color: #777; font-size: 0.8rem; padding: 2rem 1rem; border-top: 1px solid #333; margin-top: 3rem; }
+  .highlight { font-weight: bold; color: #00ffcc; }
+  #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 999; }
+  #lightbox img { max-width: 90%; max-height: 90%; border: 4px solid white; border-radius: 10px; animation: zoomIn 0.5s ease; }
+  @keyframes fadeInDown { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
+  @keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
+  @keyframes zoomIn { from {transform: scale(0.7); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+</style>
 </head>
 <body>
   <div class="contact-menu">
@@ -206,36 +91,67 @@
   </section>
 
   <section>
-    <h2>PC & Hackintosh Builds</h2>
-    <div class="project">
-      <div class="badge">Hackintosh</div>
-      <h3>Ryzen Hackintosh - Windows (Dual Boot) (OpenCore)</h3>
-      <p>Built a macOS Sonoma/Sequoia Hackintosh on Ryzen 5700G with an RX 5600 XT. Configured OpenCore bootloader, mapped USB ports, and applied ACPI patches.</p>
-      <div class="screenshot">
-        <img src="images/PC1.jpg" alt="White Hackintosh Build" onclick="openLightbox(this.src)">
-      </div>
-    </div>
+<h2>PC & Hackintosh Builds</h2>
+<div class="project">
+<div class="badge">Hackintosh</div>
+<h3>Ryzen Hackintosh - Windows (Dual Boot) (OpenCore)</h3>
+<p>Built a macOS Sonoma/Sequoia Hackintosh on Ryzen 5700G with an RX 5600 XT. Configured OpenCore bootloader, mapped USB ports, and applied ACPI patches.</p>
+<details>
+<summary>View Specs</summary>
+<ul>
+<li>CPU: Ryzen 7 5700G</li>
+<li>GPU: Radeon RX 5600 XT</li>
+<li>Motherboard: AORUS B550 AX V2</li>
+<li>RAM: [Your RAM specs]</li>
+<li>Storage: [Your SSD/HDD]</li>
+<li>macOS Version: Sonoma ➔ Sequoia (via OpenCore)</li>
+</ul>
+</details>
+<div class="screenshot">
+<img src="images/PC1.jpg" alt="White Hackintosh Build" onclick="openLightbox(this.src)">
+</div>
+</div>
 
-    <div class="project">
-      <div class="badge">Hackintosh</div>
-      <h3>Asus VivoBook X512DA Hackintosh</h3>
-      <p>Installed macOS Big Sur on an AMD-based VivoBook X512DA. Managed <span class="highlight">kexts</span>, Wi-Fi, trackpad compatibility, and USB mapping.</p>
-      <div class="screenshot">
-        <img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh" onclick="openLightbox(this.src)">
-        <div class="caption">Big Sur on Asus VivoBook</div>
-      </div>
-    </div>
+<div class="project">
+<div class="badge">Hackintosh</div>
+<h3>Asus VivoBook X512DA Hackintosh</h3>
+<p>Installed macOS Big Sur on an AMD-based VivoBook X512DA. Managed <span class="highlight">kexts</span>, Wi-Fi, trackpad compatibility, and USB mapping.</p>
+<details>
+<summary>View Specs</summary>
+<ul>
+<li>CPU: AMD Ryzen 5 3500U</li>
+<li>iGPU: Radeon Vega 8 Graphics</li>
+<li>RAM: [Your VivoBook RAM]</li>
+<li>WiFi: Replaced or Patched [Detail if needed]</li>
+<li>macOS Version: Big Sur</li>
+</ul>
+</details>
+<div class="screenshot">
+<img src="images/Hackintosh.jpg" alt="VivoBook Hackintosh" onclick="openLightbox(this.src)">
+<div class="caption">Big Sur on Asus VivoBook</div>
+</div>
+</div>
 
-    <div class="project">
-      <div class="badge">PC Build</div>
-      <h3>Custom PC – Red Theme Build</h3>
-      <p>Ryzen 7 1700 and Radeon RX 5600 XT configuration, focusing on clean airflow, red-themed RGB, and budget optimization for gaming and development.</p>
-      <div class="screenshot">
-        <img src="images/PC2.jpg" alt="Custom PC Red Build" onclick="openLightbox(this.src)">
-        <div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
-      </div>
-    </div>
-  </section>
+<div class="project">
+<div class="badge">PC Build</div>
+<h3>Custom PC – Red Theme Build</h3>
+<p>Ryzen 7 1700 and Radeon RX 5600 XT configuration, focusing on clean airflow, red-themed RGB, and budget optimization for gaming and development.</p>
+<details>
+<summary>View Specs</summary>
+<ul>
+<li>CPU: Ryzen 7 1700</li>
+<li>GPU: Radeon RX 5600 XT</li>
+<li>Motherboard: [Motherboard Model]</li>
+<li>RAM: [Amount and Speed]</li>
+<li>Cooling: Air Cooler with Red RGB Fans</li>
+</ul>
+</details>
+<div class="screenshot">
+<img src="images/PC2.jpg" alt="Custom PC Red Build" onclick="openLightbox(this.src)">
+<div class="caption">Ryzen 7 1700 / RX 5600 XT Configuration</div>
+</div>
+</div>
+</section>
 
   <section>
     <h2>Hardware Mods & Diagnostics</h2>
