@@ -43,7 +43,6 @@
   }
 }
 
-/* Animate dropdown open/close smoother */
 details[open] summary ~ * {
   animation: dropdown 0.5s ease-in-out;
 }
@@ -52,6 +51,27 @@ details[open] summary ~ * {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+details summary {
+  list-style: none;
+  position: relative;
+  padding-left: 1.5rem; 
+}
+
+details summary::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  color: #66ccff; 
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
