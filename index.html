@@ -167,6 +167,23 @@ Whether it’s developing new features for my phone, understanding technology so
         </video>
       </div>
     </div>
+	
+	<div class="project">
+  <div class="badge">iOS Reverse Engineering</div>
+  <h3>Decrypting iOS 18 System Apps for Reverse Engineering</h3>
+  <p>For advanced tweak development and system application analysis on iOS 18, I manually decrypted IPSWs using the <a href="https://github.com/blacktop/ipsw" target="_blank" style="color: #66ccff; text-decoration: underline;">BlackTop ipsw</a> tool with AEA (AppleEncryptedArchive) mode. This enabled me to access decrypted system applications like Calculator.app for reverse engineering and tweak injection testing.</p>
+
+  <ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-top: 1rem;">
+    <li><strong>Download IPSW:</strong> Downloaded the official iOS 18 IPSW file from Apple servers for the target device.</li>
+    <li><strong>Extract and Decrypt:</strong> Used <a href="https://blacktop.github.io/ipsw/docs/guides/aea/" target="_blank" style="color: #66ccff; text-decoration: underline;">ipsw aea decrypt</a> to decrypt the Root Filesystem DMG using known GID and File keys.</li>
+    <li><strong>Mount Decrypted Filesystem:</strong> Mounted the decrypted DMG using <code>hdiutil attach</code> to expose the full root filesystem on macOS.</li>
+    <li><strong>Locate System Apps:</strong> Accessed <code>/System</code> inside the mounted volume to retrieve system app bundles.</li>
+    <li><strong>Extract and Analyze:</strong> Copied extracted apps like Calculator.app and loaded Mach-O binaries into Ghidra for static reverse engineering.</li>
+  </ul>
+
+  <p style="font-size: 0.9rem; color: #999; text-align: center; margin-top: 1rem;">Tools Used: ipsw (AEA Mode), hdiutil, Ghidra, Hopper, FLEX</p>
+</div>
+	
   </section>
 
   <section data-aos="fade-up">
