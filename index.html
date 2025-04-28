@@ -170,8 +170,8 @@ Whether it’s developing new features for my phone, understanding technology so
 	
 	<div class="project">
   <div class="badge">iOS Reverse Engineering</div>
-  <h3>Decrypting iOS 18 System Apps for Reverse Engineering</h3>
-  <p>For advanced tweak development and system application analysis on iOS 18, I manually decrypted IPSWs using the <a href="https://github.com/blacktop/ipsw" target="_blank" style="color: #66ccff; text-decoration: underline;">BlackTop ipsw</a> tool with AEA (AppleEncryptedArchive) mode. This enabled me to access decrypted system applications like Calculator.app for reverse engineering and tweak injection testing.</p>
+  <h3>Decrypting iOS 18 </h3>
+  <p>For tweak development and application analysis on iOS 18, I decrypted IPSWs using the <a href="https://github.com/blacktop/ipsw" target="_blank" style="color: #66ccff; text-decoration: underline;">BlackTop ipsw</a> tool with AEA (AppleEncryptedArchive) mode. This enabled me to access decrypted system applications like Calculator.app for reverse engineering and tweak injection testing.</p>
 
   <ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-top: 1rem;">
     <li><strong>Download IPSW:</strong> Downloaded the official iOS 18 IPSW file from Apple servers for the target device.</li>
@@ -182,6 +182,22 @@ Whether it’s developing new features for my phone, understanding technology so
   </ul>
 
   <p style="font-size: 0.9rem; color: #999; text-align: center; margin-top: 1rem;">Tools Used: ipsw (AEA Mode), hdiutil, Ghidra, Hopper, FLEX</p>
+</div>
+
+ <div class="screenshot">
+    <img src="images/iOS18ipsw.jpg" alt="iOS 18 Decrypted IPSW Root Filesystem" onclick="openLightbox(this.src)">
+    <div class="caption">iOS 18 Root File System after Decryption and Mount</div>
+  </div>
+
+  <div class="screenshot">
+    <img src="images/Reversefiles.jpg" alt="Decrypted iOS 18 Calculator Files" onclick="openLightbox(this.src)">
+    <div class="caption">Extracted iOS 14–18 Calculator App Binaries for Research</div>
+  </div>
+
+  <div class="screenshot">
+    <img src="images/Ghidra.jpg" alt="Calculator Binary Disassembled in Ghidra" onclick="openLightbox(this.src)">
+    <div class="caption">Static Analysis of Calculator App Binary Using Ghidra</div>
+  </div>
 </div>
 	
   </section>
