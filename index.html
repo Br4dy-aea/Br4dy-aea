@@ -86,6 +86,17 @@ details[open] summary ~ * {
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Expanded view">
   </div>
+  
+  <section id="about">
+  <h2>About Me</h2>
+  <p style="text-align: center; max-width: 720px; margin: 1rem auto; font-size: 1.1rem; line-height: 1.8;">
+   I enjoy hardware modding, reverse engineering, iOS tweak development, and all kinds of custom projects.
+With a passion for understanding how things work behind the scenes, I combine hands-on work with modern principles.
+My goal is to explore technology in a way I enjoy — creating, learning, and improving every step of the way.
+Whether it’s developing new features for my phone, understanding technology so I can fix rather than replace, adding mod chips for freedom on consoles, or working on DIY projects, I’m driven by need for technical independence.
+  </p>
+</section>
+
 
   <section data-aos="fade-up">
     <h2>iOS Tweak Development</h2>
@@ -93,7 +104,10 @@ details[open] summary ~ * {
       <div class="badge">Tweak Development</div>
       <h3>CalcConv – iOS Calculator Conversion Tweak</h3>
       <p>A jailbreak tweak that brings iOS 18-style unit conversions to older iOS versions. Features <span class="highlight">custom UI</span>, and category search via Theos and Objective-C.</p>
-      <div class="screenshot">
+      <ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem;">
+  <li>Tools Used: Theos, Objective-C, Logos, Frida, Ghidra, Cycript, Class-dump, FLEXing, and most importantly Taurine.</li>
+</ul>
+	  <div class="screenshot">
         <video controls>
           <source src="videos/Calcconvui.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -108,7 +122,10 @@ details[open] summary ~ * {
       <div class="badge">PS2 Modding</div>
       <h3>PS2 Modbo 5.0 Install – GH-022 Board</h3>
       <p>Soldered Modbo 5.0 to PlayStation 2. Identified <span class="highlight">safe alternative 3.3V pads</span> and resolved <span class="highlight">Y-break wire routing</span> issue.</p>
-      <div class="screenshot">
+      <ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem;">
+  <li>Tools Used: Rockman Tools RM-75 Workstation Solder/Hot-Air, Multimeter, Reverse Engineering</li>
+</ul>
+	  <div class="screenshot">
         <img src="images/modbo1.jpg" alt="Modbo wiring closeup" onclick="openLightbox(this.src)">
         <img src="images/modbo2.jpg" alt="Modbo chip GND and power soldering" onclick="openLightbox(this.src)">
       </div>
@@ -118,7 +135,10 @@ details[open] summary ~ * {
       <div class="badge">PS1 Modding</div>
       <h3>PS1 Modchip Recovery</h3>
       <p>Discovered a PlayStation 1 at a flea market with a half-installed modchip. Completed the wiring using William Quade's guides via trial and error.</p>
-      <div class="screenshot">
+      <ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem;">
+  <li>Tools Used: Rockman Tools RM-75 Workstation Solder/Hot-Air, Multimeter, Reverse Engineering</li>
+</ul>
+	  <div class="screenshot">
         <img src="images/ps1.jpg" alt="PS1 Modchip Install" onclick="openLightbox(this.src)">
         <div class="caption">Recovered and completed PS1 modchip installation.</div>
       </div>
@@ -137,6 +157,9 @@ details[open] summary ~ * {
 <div class="badge">Hackintosh</div>
 <h3>Ryzen Hackintosh - Windows (Dual Boot) (OpenCore)</h3>
 <p>Built a macOS Monterey to Sonoma Hackintosh on Ryzen 5700G with an RX 5600 XT, Dual booting windows with the 7800XT. Configured OpenCore, USB ports(Mapping), and ACPI patches.</p>
+<ul style="list-style: disc; margin-left: 2rem; color: #aaa; font-size: 0.95rem;">
+  <li>Tools Used: OpenCore, Dortania Guide.</li>
+</ul>
 <details>
 <summary>Specs</summary>
 <ul>
@@ -210,8 +233,9 @@ With a 50W resistor, only about 65% of its rated capacity is used, this is a saf
   </section>
 
   <footer>
-    <p>Built by Br4dy • Don't Chase Gold</p>
-  </footer>
+  <p>Built from broken rules — Braeden Bateman</p>
+  <p style="font-size: 0.7rem; color: #555;">Powered by GitHub Pages</p>
+</footer>
 
   <script>
     function openLightbox(src) {
