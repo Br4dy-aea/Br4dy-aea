@@ -180,7 +180,14 @@ details[open] summary ~ * {
     <div class="project">
       <div class="badge">Automotive Electronics</div>
       <h3>Hyperflash Fix – Load Resistor Install</h3>
-      <p>Installed load resistors to prevent hyperflashing after LED signal upgrades. Diagnosed bundled headlight harness wiring using multimeter and safely mounted the resistors.</p>
+      <p>Installed (Soldered) load resistors to stop hyperflashing after Halogen to LED Swap. Hyperflashing occurs when swapping in LEDs without resistors because LEDs use significantly less power and don't draw the same amount of current as halogen bulbs. This makes the car think a bulb has burned out, causing "hyperflashing." Resistors fix the issue by adding artificial load to the circuit, imitating the original bulb's current draw so the car’s flasher relay operates at normal speed.
+
+Most vehicles expect around 1.5A–2.5A per bulb, meaning you need a minimum 35W 6Ω resistor wired across each signal wire and ground (Thats 8 Solder/Crimp points). Though, 50W 6Ω (6RJ) resistors are the universal best option, because under a running engine voltage (14V), the math is:
+
+14V ÷ 6Ω = 2.33A
+14V × 2.33A = 32.6W
+
+With a 50W resistor, only about 65% of its rated capacity is used, this is a safe margin for heat and long-term use. </p>
       <div class="screenshot">
         <img src="images/resistors.jpg" alt="Load Resistor Install" onclick="openLightbox(this.src)">
       </div>
