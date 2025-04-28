@@ -52,11 +52,26 @@ details[open] summary ~ * {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+}
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
 </style>
 </head>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <body class="fade-in">
+<div id="particles-js"></div>
+
   <div class="contact-menu">
     <a href="mailto:braedenbateman29@hotmail.com">Email</a>
     <a href="https://github.com/Br4dy-aea" target="_blank">GitHub</a>
@@ -214,6 +229,26 @@ With a 50W resistor, only about 65% of its rated capacity is used, this is a saf
 AOS.init({
   duration: 1200,
   once: true
+});
+
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 45, density: { enable: true, value_area: 800 } },
+    color: { value: "#00ffcc" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5, random: true },
+    size: { value: 3, random: true },
+    move: { enable: true, speed: 0.7 }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: false },
+      resize: true
+    }
+  },
+  retina_detect: true
 });
 </script>
 </body>
