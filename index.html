@@ -28,9 +28,33 @@
   @keyframes fadeInDown { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
   @keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
   @keyframes zoomIn { from {transform: scale(0.7); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+  html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animate dropdown open/close smoother */
+details[open] summary ~ * {
+  animation: dropdown 0.5s ease-in-out;
+}
+
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
-<body>
+<body class=fade-in">
   <div class="contact-menu">
     <a href="mailto:braedenbateman29@hotmail.com">Email</a>
     <a href="https://github.com/Br4dy-aea" target="_blank">GitHub</a>
@@ -167,16 +191,17 @@
 
   <script>
     function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = src;
-      lightbox.style.display = 'flex';
-    }
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        document.getElementById('lightbox').style.display = 'none';
-      }
-    });
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (src.endsWith('.mp4')) {
+    lightbox.innerHTML = '<video controls autoplay style="max-width:90%;max-height:90%;border:4px solid white;border-radius:10px;"><source src="' + src + '" type="video/mp4">Your browser does not support the video tag.</video>';
+  } else {
+    lightbox.innerHTML = '<img id="lightbox-img" src="' + src + '" alt="Expanded view">';
+  }
+
+  lightbox.style.display = 'flex';
+}
   </script>
 </body>
 </html>
