@@ -54,6 +54,8 @@ details[open] summary ~ * {
 }
 </style>
 </head>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <body class="fade-in">
   <div class="contact-menu">
     <a href="mailto:braedenbateman29@hotmail.com">Email</a>
@@ -70,7 +72,7 @@ details[open] summary ~ * {
     <img id="lightbox-img" src="" alt="Expanded view">
   </div>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>iOS Tweak Development</h2>
     <div class="project">
       <div class="badge">Jailbreak Development</div>
@@ -85,7 +87,7 @@ details[open] summary ~ * {
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Reverse Engineering & Firmware Projects</h2>
     <div class="project">
       <div class="badge">PS2 Modding</div>
@@ -114,7 +116,7 @@ details[open] summary ~ * {
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
 <h2>PC & Hackintosh Builds</h2>
 <div class="project">
 <div class="badge">Hackintosh</div>
@@ -173,7 +175,7 @@ details[open] summary ~ * {
 </div>
 </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Hardware Mods & Diagnostics</h2>
     <div class="project">
       <div class="badge">Automotive Electronics</div>
@@ -202,6 +204,10 @@ details[open] summary ~ * {
 
   lightbox.style.display = 'flex';
 }
-  </script>
+AOS.init({
+  duration: 1200,
+  once: true
+});
+</script>
 </body>
 </html>
