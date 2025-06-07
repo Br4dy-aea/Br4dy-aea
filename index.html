@@ -130,6 +130,17 @@ a:hover {
   from { width: 0; }
   to { width: 80px; }
 }
+
+.invisible-until-selected {
+  color: transparent;
+  user-select: text; /* Make sure it can still be selected */
+}
+
+.invisible-until-selected::selection {
+  color: black; /* Or any visible color */
+  background: yellow; /* Optional: custom highlight background */
+}
+
 </style>
 </head>
 
@@ -401,7 +412,7 @@ Whether it’s developing new features for my phone, understanding technology so
 </section>
   
   <footer>
-  <p>RIP JB -"Freedom is made, not given" 
+  <p class="invisible-until-selected">RIP JB -"Freedom is made, not given"</p>
   <p>Built from broken rules</p>
   <p style="font-size: 0.7rem; color: #555;">Powered by GitHub</p>
 </footer>
